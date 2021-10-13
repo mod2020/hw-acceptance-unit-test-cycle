@@ -252,3 +252,7 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+Then(/^the director of "([^"]*)" should be "([^"]*)"$/) do |title, dirname|
+  expect(Movie.find_by_title(title).director == dirname)
+end
